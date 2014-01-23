@@ -1,0 +1,29 @@
+{
+  "name": "mimosa-markdown",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ifraixedes/mimosa-markdown",
+  "author": "Ivan Fraixedes <ifcdev@gmail.com>",
+  "description": "Simple mimosa module which render markdown files using marked nodejs module",
+  "contributors": [ ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ifraixedes/mimosa-markdown"
+  },
+  "keywords": [
+    "mimosa",
+    "mmodule",
+    "markdown"
+  ],
+  "dependencies": {
+    "logmimosa": "0.6.0",
+    "marked": "~0.3.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "main": "./lib/index",
+  "scripts": {
+    "prepublish": "mimosa build"
+  }
+}
