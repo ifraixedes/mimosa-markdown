@@ -25,7 +25,7 @@ exports.placeholder = ->
                                                 #         a constructor function under 'Renderer' name. The 
                                                 #         module will be required as usual, so it can be
                                                 #         a dependency module or just a script path which
-                                                #         must relative to the project's root folder
+                                                #         must be relative to the project's root folder
                                                 #       - Object: a valid `marked` renderer instance 
                                                 # 
                                                 #    e.g. You can populate this option parameter as "marked", 
