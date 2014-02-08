@@ -45,6 +45,6 @@ exports.validate = (config, validators) ->
       if config.markdown.options.renderer?
         rendererOptionType = typeof config.markdown.options.renderer
         if rendererOptionType isnt 'string' and rendererOptionType isnt 'object' and rendererOptionType isnt 'function'
-          error.push 'markdown.options.renderer must be a string or an object or a function'
+          errors.push 'markdown.options.renderer must be a string or an object or a function'
     
   errors
