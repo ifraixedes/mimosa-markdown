@@ -33,7 +33,7 @@ exports.placeholder = ->
                                                 #         of course it will produce the same effect than
                                                 #         not to populate this option parameter
                                                 # - `highlight`, can be
-                                                #       - Function: the function which performs the                                                 #       - String: the name of a node module which must export
+                                                #       - Function: the function which performs the 
                                                 #         syntax highlighting as `marked` requires
                                                 #       - String: the name of a node module which must export
                                                 #         the function which performs the syntax highlighting
