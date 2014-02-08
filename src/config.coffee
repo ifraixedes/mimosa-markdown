@@ -3,13 +3,34 @@
 exports.defaults = ->
   markdown:
     extensions: ['md']
+    options: { }
 
 exports.placeholder = ->
   """
   \t
     # markdown:   
       # extensions: ['md']                      # The list of file extensions which will be considered as 
-                                                # markdown files, therefore they will be compiled                                         
+                                                # markdown files, therefore they will be compiled 
+      # options:                                # Object with the `marked` settings options.
+                                                # Check https://github.com/chjj/marked to know what options
+                                                # are available; this module by default doesn't modify the
+                                                # default options that `marked` takes.
+                                                # NOTE: The only options that differs from the original 
+                                                # `marked` settings options is `renderer`, which can be 
+                                                # - Function: it will be considered that is a constructor, so 
+                                                #       the constructor must instantiate a valid `marked` 
+                                                #       renderer object
+                                                # - String: the name of a node module which must export a
+                                                #       constructor function under 'Renderer` name. The 
+                                                #       module will be required as usual, so it can be
+                                                #       a dependency module or just a script path
+                                                # - Object: a valid `marked` renderer instance 
+                                                # 
+                                                #  e.g. You can populate this option parameter as "marked", 
+                                                #       which will instance the `marked` default renderer,
+                                                #       of course it will produce the same effect than
+                                                #       not to populate this option parameter
+                                                #
   """
 
 exports.validate = (config, validators) ->
@@ -20,7 +41,10 @@ exports.validate = (config, validators) ->
         unless typeof extension is 'string'
           errors.push 'markdown.extensions must be an array of strings'
           break
-
+    if validators.ifExistsIsObject(errors, 'markdown.options', config.markdown.options)
+      if config.markdown.options.renderer?
+        rendererOptionType = typeof config.markdown.options.renderer
+        if rendererOptionType isnt 'string' and rendererOptionType isnt 'object' and rendererOptionType isnt 'function'
+          error.push 'markdown.options.renderer must be a string or an object or a function'
+    
   errors
-
-
