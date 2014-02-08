@@ -22,7 +22,7 @@ exports.placeholder = ->
                                                 #         so the constructor must instantiate a valid `marked` 
                                                 #         renderer object
                                                 #       - String: the name of a node module which must export
-                                                #         a constructor function under 'Renderer` name. The 
+                                                #         a constructor function under 'Renderer' name. The 
                                                 #         module will be required as usual, so it can be
                                                 #         a dependency module or just a script path which
                                                 #         must relative to the project's root folder
