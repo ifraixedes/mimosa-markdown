@@ -74,7 +74,7 @@ Note that `non-exiting-marked-renderer` should export a constructor under `Rende
 * Using a `Renderer` instance referenced in the same configuration file
 
 ```javascript
-var Renderer  = require('non-existing-marked-renderer);
+var Renderer  = require('non-existing-marked-renderer');
 var myRenderer = new Renderer();
 
 ....
