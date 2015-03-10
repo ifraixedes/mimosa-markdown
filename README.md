@@ -1,5 +1,8 @@
 Mimosa Markdown
 ===========
+
+__WARNING I've stopped to maintain this modules, so I'm happy to move the ownership of this repository if somebody is interested in maintaining it, refer to [this issue](https://github.com/ifraixedes/mimosa-markdown/issues/2)__
+
 ## Overview
 
 This mimosa module allows you to use markdown documents, which will be compiled to html static files.
@@ -112,6 +115,4 @@ This module doesn't perform any smart operations, just integrate into the mimosa
 
 ## License
 
-The MIT License
-
-Copyright (c) 2014 Ivan Fraixedes Cugat <ifcdev@gmail.com>
+The MIT License, for more information read the [LICENSE file](LICENSE)
