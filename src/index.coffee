@@ -6,7 +6,7 @@ config = require  './config'
 registration = (mimosaConfig, register) ->
   register ['add', 'update', 'buildFile'], 'compile', _markdownCompiler(mimosaConfig.root, mimosaConfig.markdown), mimosaConfig.markdown.extensions
 
-registerCommand = (program, retrieveConfig) ->
+registerCommand = (program, logger, retrieveConfig) ->
 
 _markdownCompiler = (projectRootDir, markdownConfig) ->
   marked = require 'marked'
@@ -18,7 +18,7 @@ _markdownCompiler = (projectRootDir, markdownConfig) ->
       when 'function' then new markedOptions.renderer
       when 'string' then new (if markedOptions.renderer.indexOf(path.sep) is -1 then require marked.renderer else require path.join(projectRootDir, markedOptions.renderer)).Renderer
       else markedOptions.renderer
-  
+
   if markedOptions.highlight
     markedOptions.highlight = switch typeof markedOptions.highlight
       when 'string' then require path.join(projectRootDir, markedOptions.highlight)
