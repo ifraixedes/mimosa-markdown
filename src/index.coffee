@@ -6,8 +6,6 @@ config = require  './config'
 registration = (mimosaConfig, register) ->
   register ['add', 'update', 'buildFile'], 'compile', _markdownCompiler(mimosaConfig.root, mimosaConfig.markdown), mimosaConfig.markdown.extensions
 
-registerCommand = (program, logger, retrieveConfig) ->
-
 _markdownCompiler = (projectRootDir, markdownConfig) ->
   marked = require 'marked'
   utilFile = require './util/file'
@@ -33,7 +31,5 @@ _markdownCompiler = (projectRootDir, markdownConfig) ->
 
 module.exports =
   registration: registration
-  registerCommand: registerCommand
   defaults: config.defaults
-  placeholder: config.placeholder
   validate: config.validate
